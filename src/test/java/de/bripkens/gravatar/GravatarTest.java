@@ -52,7 +52,7 @@ public class GravatarTest {
         int size = 40;
         g.setSize(size);
         assertEquals(Gravatar.URL + EMAIL_HASH + Gravatar.FILE_TYPE_EXTENSION +
-                "?s=" + size + "&", g.getUrl(EMAIL));
+                "?s=" + size, g.getUrl(EMAIL));
     }
 
     @Test
@@ -94,7 +94,7 @@ public class GravatarTest {
         Rating rating = Rating.RESTRICTED;
         g.setRating(rating);
         assertEquals(Gravatar.URL + EMAIL_HASH + Gravatar.FILE_TYPE_EXTENSION +
-                "?r=" + rating.getKey() + "&", g.getUrl(EMAIL));
+                "?r=" + rating.getKey(), g.getUrl(EMAIL));
     }
 
     @Test
@@ -136,7 +136,7 @@ public class GravatarTest {
         DefaultImage di = DefaultImage.MONSTER;
         g.setStandardDefaultImage(di);
         assertEquals(Gravatar.URL + EMAIL_HASH + Gravatar.FILE_TYPE_EXTENSION +
-                "?d=" + di.getKey() + "&", g.getUrl(EMAIL));
+                "?d=" + di.getKey(), g.getUrl(EMAIL));
     }
 
     @Test
@@ -154,7 +154,7 @@ public class GravatarTest {
         String img = "http://www.google.com";
         g.setCustomDefaultImage(img);
         assertEquals(Gravatar.URL + EMAIL_HASH + Gravatar.FILE_TYPE_EXTENSION +
-                "?d=" + URLEncoder.encode(img, "UTF-8") + "&", g.getUrl(EMAIL));
+                "?d=" + URLEncoder.encode(img, "UTF-8"), g.getUrl(EMAIL));
     }
 
     @Test
@@ -165,11 +165,11 @@ public class GravatarTest {
         DefaultImage di = DefaultImage.MONSTER;
         g.setStandardDefaultImage(di);
         assertEquals(Gravatar.URL + EMAIL_HASH + Gravatar.FILE_TYPE_EXTENSION +
-                "?d=" + di.getKey() + "&", g.getUrl(EMAIL));
+                "?d=" + di.getKey(), g.getUrl(EMAIL));
 
         g.setCustomDefaultImage(img);
         assertEquals(Gravatar.URL + EMAIL_HASH + Gravatar.FILE_TYPE_EXTENSION +
-                "?d=" + URLEncoder.encode(img, "UTF-8") + "&", g.getUrl(EMAIL));
+                "?d=" + URLEncoder.encode(img, "UTF-8"), g.getUrl(EMAIL));
     }
 
     @Test

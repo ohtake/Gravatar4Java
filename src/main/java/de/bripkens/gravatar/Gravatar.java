@@ -262,9 +262,12 @@ public class Gravatar {
     }
 
     private void addParameter(StringBuilder builder, String key, String value) {
+        char lastChar = builder.charAt(builder.length() -1);
+        if (lastChar != '?' && lastChar != '&') {
+            builder.append("&");
+        }
         builder.append(key)
                 .append("=")
-                .append(value)
-                .append("&");
+                .append(value);
     }
 }
